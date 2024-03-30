@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 const axios = require('axios');
 
-// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 
 @Injectable()
 export class DataService {
