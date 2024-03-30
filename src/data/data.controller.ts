@@ -15,8 +15,8 @@ export class DataController {
         return await this.dataService.getRestaurantMenu(+resId);
     }
 
-    @Get('/getUpdatedRestaurantsList')
+    @Get('/getUpdatedRestaurantsList/:pageOffSet/:collectionV5RestaurantListWidget_SimRestoRelevance_food_seo')
     async getUpdatedRestaurantsList(@Param('pageOffSet') pageOffSet: any, @Param('collectionV5RestaurantListWidget_SimRestoRelevance_food_seo') collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: any) {
-        return await this.dataService.getUpdatedRestaurantsList(pageOffSet,collectionV5RestaurantListWidget_SimRestoRelevance_food_seo);
+        return await this.dataService.getUpdatedRestaurantsList(pageOffSet, collectionV5RestaurantListWidget_SimRestoRelevance_food_seo);
     }
 }
