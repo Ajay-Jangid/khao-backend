@@ -45,20 +45,13 @@ export class DataService {
 
     }
 
-    async getUpdatedRestaurantsList(pageOffSet: any, collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: any) {
+    async getUpdatedRestaurantsList(pageOffSet: any,) {
         try {
             let data = JSON.stringify({
                 "lat": 12.9351929,
                 "lng": 77.62448069999999,
-                "nextOffset": pageOffSet,
-                "widgetOffset": {
-                    "NewListingView_category_bar_chicletranking_TwoRows": "",
-                    "NewListingView_category_bar_chicletranking_TwoRows_Rendition": "",
-                    "Restaurant_Group_WebView_SEO_PB_Theme": "",
-                    "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo": collectionV5RestaurantListWidget_SimRestoRelevance_food_seo,
-                    "inlineFacetFilter": "",
-                    "restaurantCountWidget": ""
-                },
+                "nextOffset": pageOffSet.nextOffset,
+                "widgetOffset": pageOffSet.widgetOffset,
                 "filters": {},
                 "seoParams": {
                     "seoUrl": "https://www.swiggy.com/",
