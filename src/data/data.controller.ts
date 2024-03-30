@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { DataService } from './data.service';
 
 @Controller('data')
@@ -15,4 +15,8 @@ export class DataController {
         return await this.dataService.getRestaurantMenu(+resId);
     }
 
+    @Post('/getUpdatedRestaurantsList')
+    async getUpdatedRestaurantsList(@Body() body: any) {
+        return await this.dataService.getUpdatedRestaurantsList(body);
+    }
 }
