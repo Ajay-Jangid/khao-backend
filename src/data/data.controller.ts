@@ -22,12 +22,13 @@ export class DataController {
 
     @Get('/getDish/:collection_id/:tags')
     async getDish(@Param('collection_id') collection_id: any, @Param('tags') tags: any) {
-        console.log(collection_id,tags)
+        console.log(collection_id, tags)
         return await this.dataService.getDish(collection_id, tags);
     }
 
-    @Get('/getUpdatedRestaurantsList/:pageOffSet/:collectionV5RestaurantListWidget_SimRestoRelevance_food_seo')
-    async getUpdatedRestaurantsList(@Param('pageOffSet') pageOffSet: any, @Param('collectionV5RestaurantListWidget_SimRestoRelevance_food_seo') collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: any) {
-        return await this.dataService.getUpdatedRestaurantsList(pageOffSet, collectionV5RestaurantListWidget_SimRestoRelevance_food_seo);
+    @Post('/getUpdatedRestaurantsList')
+    async getUpdatedRestaurantsList(@Body() body: any) {
+        console.log(body.nextOffset)
+        return await this.dataService.getUpdatedRestaurantsList(body);
     }
 }
