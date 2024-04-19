@@ -6,10 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "cd client && (IF NOT EXIST node_modules npm install) && npm run build && rmdir /s /q ..\\public && mkdir ..\\public && move dist ..\\public && cd .. && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "cd client && (IF NOT EXIST node_modules npm install) && npm run build && rmdir /s /q ..\\public && mkdir ..\\public && move dist ..\\public && cd .. && nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
