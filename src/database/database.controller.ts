@@ -41,4 +41,10 @@ export class DatabaseController {
             res.status(404).json(false)
         }
     }
+
+    @Post('/order/create')
+    async createOrder(@Body() body: any, @Res() res) {
+        let result = await this.databaseService.createOrder(body);
+        res.status(result.statusCode).json(result)
+    }
 }

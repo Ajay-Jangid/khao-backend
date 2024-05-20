@@ -7,7 +7,7 @@ export class AppController {
 
   @Get()
   getHello(@Res() res: any) {
-    res.status(302).redirect('https://khao-backend.vercel.app/login')
+    res.status(302).redirect('https://proxy-server-khao.onrender.com/login')
   }
 
   @Post()

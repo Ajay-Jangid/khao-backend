@@ -125,4 +125,23 @@ export class DatabaseService {
             return null;
         }
     }
+
+    public async createOrder(body: any) {
+        try {
+            console.log(body.email)
+
+            let user = await DatabaseService.dbConnection.collection('Orders').insertOne({
+                ...body
+            });
+
+            return {
+                status: 'success',
+                statusCode: '201',
+                message: "Order Created",
+            };
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 }
